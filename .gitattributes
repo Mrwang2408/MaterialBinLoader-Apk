@@ -1,0 +1,20 @@
+* text=auto eol=lf
+
+*.c text
+*.h text
+*.cpp text
+*.java text
+*.py text
+*.md text
+*.txt text
+*.gradle text
+*.pro text
+*.xml text
+*.json text
+
+*.png binary
+*.jpg binary
+*.jar binary
+*.so binary
+*.a binary
+*.class binary

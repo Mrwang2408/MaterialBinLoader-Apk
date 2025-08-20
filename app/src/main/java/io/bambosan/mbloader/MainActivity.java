@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try (ZipFile zipFile = new ZipFile(mcInfo.sourceDir)) {
-            for (int i = 2; i >= 0; i--) {
+            for (int i = 6; i >= 0; i--) {
                 String dexName = "classes" + (i == 0 ? "" : i) + ".dex";
                 ZipEntry dexFile = zipFile.getEntry(dexName);
                 if (dexFile != null) {
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
-        }
+        } catch (Throwable th) {} 
     }
 
     private void processNativeLibraries(@NotNull ApplicationInfo mcInfo, @NotNull Object pathList, @NotNull Handler handler, TextView listener) throws Exception {

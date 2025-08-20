@@ -30,6 +30,6 @@ public class Launcher extends com.mojang.minecraftpe.MainActivity {
         System.loadLibrary("fmod");
         System.loadLibrary("minecraftpe");
         System.loadLibrary("mc");
-        System.loadLibrary("materialbinloader");
+        System.loadLibrary("mbl2");
     }
 }

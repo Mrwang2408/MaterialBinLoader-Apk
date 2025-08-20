@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.mojang.minecraftpe'
-    compileSdk 34
+    compileSdk 35
     defaultConfig {
         minSdk 26
         consumerProguardFiles "consumer-rules.pro"

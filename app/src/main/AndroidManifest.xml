@@ -11,6 +11,7 @@
         android:required="false" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" /> -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission
@@ -30,26 +31,32 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/network_security_config"
-        android:supportsRtl="true" >
+        android:allowBackup="true"
+        android:appCategory="game"
+        android:supportsRtl="true">
+        
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="sensorLandscape"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+            android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".Fallback"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name="com.mojang.minecraftpe.Launcher"
             android:alwaysRetainTaskState="true"
@@ -58,11 +65,14 @@
             android:exported="true"
             android:launchMode="singleTask"
             android:screenOrientation="sensorLandscape"
-            android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
+            android:theme="@style/AppTheme.FullScreen"
             tools:ignore="DiscouragedApi">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="mc" />
+            <meta-data 
+                android:name="android.notch_support" 
+                android:value="true" />
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -104,6 +114,7 @@
                         android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        
         <activity
                 android:name="com.microsoft.xal.browser.IntentHandler"
                 android:exported="true"
@@ -122,6 +133,7 @@
                         android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
+        
         <activity
                 android:name="com.microsoft.xal.browser.BrowserLaunchActivity"
                 android:exported="false"
@@ -134,6 +146,7 @@
                 android:launchMode="singleTask"
                 android:configChanges="keyboardHidden|orientation|screenSize|uiMode"
                 android:alwaysRetainTaskState="true" />
+                
         <provider
                 android:name="androidx.core.content.FileProvider"
                 android:exported="false"
@@ -143,6 +156,7 @@
                     android:name="android.support.FILE_PROVIDER_PATHS"
                     android:resource="@xml/file_provider_paths"/>
         </provider>
+        
     </application>
 
 </manifest>
