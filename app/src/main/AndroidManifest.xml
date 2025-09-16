@@ -38,6 +38,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="sensorLandscape"
+            android:configChanges="uiMode|screenSize|orientation"
             android:exported="true"
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
@@ -49,10 +50,9 @@
         <activity
             android:name=".Fallback"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat">
+            android:theme="@style/AppTheme.BaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

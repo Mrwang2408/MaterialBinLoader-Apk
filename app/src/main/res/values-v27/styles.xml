@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme.FullScreen" parent="@style/Theme.AppCompat">
-    
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-        
-        <item name="android:windowFullscreen">true</item>
-        <!-- <item name="android:windowContentOverlay">@null</item> -->
+    <style name="AppTheme.FullScreen" parent="@style/AppTheme.FullScreen.Base">
         <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        
-        <!-- <item name="android:windowBackground">#000000</item> -->
-        
     </style>
 </resources>

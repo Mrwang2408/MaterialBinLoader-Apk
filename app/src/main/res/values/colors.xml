@@ -1,0 +1,26 @@
+<!-- res/values/colors.xml -->
+<resources>
+    <!-- 主要品牌色 -->
+    <color name="m3_dark_primary">#D0BCFF</color>
+    <color name="m3_dark_onPrimary">#381E72</color>
+    
+    <!-- 容器和表面色 -->
+    <color name="m3_dark_surface">#141218</color>
+    <color name="m3_dark_onSurface">#E6E0E9</color>
+    
+    <!-- 次要色 -->
+    <color name="m3_dark_secondary">#CCC2DC</color>
+    <color name="m3_dark_onSecondary">#332D41</color>
+    
+    <!-- 背景色 -->
+    <color name="m3_dark_background">#141218</color>
+    <color name="m3_dark_onBackground">#E6E0E9</color>
+    
+    <!-- 错误色 -->
+    <color name="m3_dark_error">#F2B8B5</color>
+    <color name="m3_dark_onError">#601410</color>
+
+    <!-- 自定义颜色 -->
+    <color name="m3_custom_dark">#FF1C1B1D</color>
+    <color name="m3_custom_black">#FF000000</color>
+</resources>

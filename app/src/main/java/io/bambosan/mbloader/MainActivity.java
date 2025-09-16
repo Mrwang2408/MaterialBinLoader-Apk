@@ -2,13 +2,14 @@ package io.bambosan.mbloader;
 
 import org.jetbrains.annotations.NotNull;
 import android.annotation.SuppressLint;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.os.Bundle;
+import android.content.pm.ActivityInfo; 
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -34,11 +35,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         setContentView(R.layout.activity_main);
-
         TextView listener = findViewById(R.id.listener);
-
         Handler handler = new Handler(Looper.getMainLooper());
+        try {Thread.sleep(200);} catch (InterruptedException e) {};
+        // handler.post(() -> listener.setText("-> " + "MB Loader v1.3(25) Unofficial"));
         Executors.newSingleThreadExecutor().execute(() -> {
             try {
                 File cacheDexDir = new File(getCodeCacheDir(), "dex");
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 Object pathList = getPathList(getClassLoader());
                 processDexFiles(mcInfo, cacheDexDir, pathList, handler, listener);
                 processNativeLibraries(mcInfo, pathList, handler, listener);
+                try {Thread.sleep(300);} catch (InterruptedException e) {};
                 launchMinecraft(mcInfo);
             } catch (Exception e) {
                 Intent fallbackActivity = new Intent(this, Fallback.class);
@@ -88,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try (ZipFile zipFile = new ZipFile(mcInfo.sourceDir)) {
-            for (int i = 6; i >= 0; i--) {
+            for (int i = 8; i >= 0; i--) {
                 String dexName = "classes" + (i == 0 ? "" : i) + ".dex";
                 ZipEntry dexFile = zipFile.getEntry(dexName);
                 if (dexFile != null) {
@@ -123,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
             mcActivity.putExtra("MC_SPLIT_SRC", listSrcSplit);
         }
         startActivity(mcActivity);
+        // overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE);
         finish();
     }
 

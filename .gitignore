@@ -11,6 +11,7 @@
 .externalNativeBuild
 .cxx
 
+*.lnk
 /.gradle
 /build
 /app/build

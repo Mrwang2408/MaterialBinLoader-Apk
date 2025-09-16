@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'io.bambosan.mbloader'
-    compileSdk 35
-    buildToolsVersion = "35.0.0"
+    compileSdk 34
+    buildToolsVersion "34.0.0"
     defaultConfig {
         applicationId "io.bambosan.mbloader"
         minSdk 26
-        targetSdk 35
+        targetSdk 34
         versionCode 1
         versionName "1.0.0"
         resConfigs "en"
@@ -54,6 +54,7 @@ android {
 dependencies {
     implementation libs.appcompat
     implementation libs.constraintlayout
+    // implementation 'com.google.android.material:material:1.12.0'
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
